@@ -177,7 +177,7 @@ func main() {
 			return
 		}
 
-		c.SetCookie("userID", user.ID.Hex(), 3600, "/", "", false, true)
+		c.SetCookie("token", user.ID.Hex(), 3600, "/", "", false, true)
 		c.HTML(http.StatusOK, "index.tmpl", gin.H{
 			"message": fmt.Sprintf("Giriş başarılı. Hoşgeldiniz, %s", username),
 		})
