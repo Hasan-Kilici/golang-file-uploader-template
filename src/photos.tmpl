@@ -1,0 +1,18 @@
+{{ template "head.tmpl" .}}
+<div id="box"></div>
+<script>
+let photos;
+window.onload = ()=>{
+setTimeout(()=>{
+   fetch(`/images`).then(async(res)=>{
+    images = await res.json();
+    console.log(images)
+    for(let i = 0;i < images.length;i++){
+      document.getElementById("box").innerHTML += `
+      <img src="${images[i].Src}">
+      `;
+    }
+   })
+ },1000);
+}
+</script>

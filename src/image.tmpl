@@ -1,0 +1,18 @@
+<html>
+{{ template "head.tmpl" .}}
+    <title>Foto</title>
+    <body onload="getImage('{{ .fotoId }}')">
+      
+     </body>
+    <script>
+    let image;
+    function getImage(id){
+     fetch(`/images/${id}`).then(async(res)=>{
+      image = await res.json();
+      document.body.innerHTML += `
+       <img src="${image.Src}">
+      `;
+     })
+   }
+</script>
+</html>
