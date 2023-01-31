@@ -29,7 +29,7 @@ type Image struct {
 
 func main() {
 
-	clientOptions := options.Client().ApplyURI("mongodb+srv://codearmy:code2009@cluster0.juzwe.mongodb.net")
+	clientOptions := options.Client().ApplyURI("mongodburi")
 
 	client, err := mongo.Connect(context.TODO(), clientOptions)
 	if err != nil {
